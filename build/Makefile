@@ -58,7 +58,7 @@ CFLAGS.host ?= $(CPPFLAGS_host) $(CFLAGS_host)
 CXX.host ?= g++
 CXXFLAGS.host ?= $(CPPFLAGS_host) $(CXXFLAGS_host)
 LINK.host ?= $(CXX.host)
-LDFLAGS.host ?= $(LDFLAGS_host)
+LDFLAGS.host ?=
 AR.host ?= ar
 
 # Define a dir function that can handle spaces.
@@ -308,8 +308,8 @@ ifeq ($(strip $(foreach prefix,$(NO_LOAD),\
 endif
 
 quiet_cmd_regen_makefile = ACTION Regenerating $@
-cmd_regen_makefile = cd $(srcdir); /usr/lib/node_modules/npm/node_modules/node-gyp/gyp/gyp_main.py -fmake --ignore-environment "-Dlibrary=shared_library" "-Dvisibility=default" "-Dnode_root_dir=/root/.cache/node-gyp/14.17.2" "-Dnode_gyp_dir=/usr/lib/node_modules/npm/node_modules/node-gyp" "-Dnode_lib_file=/root/.cache/node-gyp/14.17.2/<(target_arch)/node.lib" "-Dmodule_root_dir=/usr/src/node-cityhash-go" "-Dnode_engine=v8" "--depth=." "-Goutput_dir=." "--generator-output=build" -I/usr/src/node-cityhash-go/build/config.gypi -I/usr/lib/node_modules/npm/node_modules/node-gyp/addon.gypi -I/root/.cache/node-gyp/14.17.2/include/node/common.gypi "--toplevel-dir=." binding.gyp
-Makefile: $(srcdir)/../../lib/node_modules/npm/node_modules/node-gyp/addon.gypi $(srcdir)/../../../root/.cache/node-gyp/14.17.2/include/node/common.gypi $(srcdir)/build/config.gypi $(srcdir)/binding.gyp
+cmd_regen_makefile = cd $(srcdir); /usr/lib/node_modules/node-gyp/gyp/gyp_main.py -fmake --ignore-environment "-Dlibrary=shared_library" "-Dvisibility=default" "-Dnode_root_dir=/tmp/prebuildify/node/14.17.2" "-Dnode_gyp_dir=/usr/lib/node_modules/node-gyp" "-Dnode_lib_file=/tmp/prebuildify/node/14.17.2/<(target_arch)/node.lib" "-Dmodule_root_dir=/usr/src/node-cityhash-go" "-Dnode_engine=v8" "--depth=." "-Goutput_dir=." "--generator-output=build" -I/usr/src/node-cityhash-go/build/config.gypi -I/usr/lib/node_modules/node-gyp/addon.gypi -I/tmp/prebuildify/node/14.17.2/include/node/common.gypi "--toplevel-dir=." binding.gyp
+Makefile: $(srcdir)/build/config.gypi $(srcdir)/binding.gyp $(srcdir)/../../lib/node_modules/node-gyp/addon.gypi $(srcdir)/../../../tmp/prebuildify/node/14.17.2/include/node/common.gypi
 	$(call do_cmd,regen_makefile)
 
 # "all" is a concatenation of the "all" targets from all the included

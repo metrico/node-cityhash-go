@@ -40,13 +40,13 @@ CFLAGS_CC_Debug := \
 	-std=gnu++1y
 
 INCS_Debug := \
-	-I/root/.cache/node-gyp/14.17.2/include/node \
-	-I/root/.cache/node-gyp/14.17.2/src \
-	-I/root/.cache/node-gyp/14.17.2/deps/openssl/config \
-	-I/root/.cache/node-gyp/14.17.2/deps/openssl/openssl/include \
-	-I/root/.cache/node-gyp/14.17.2/deps/uv/include \
-	-I/root/.cache/node-gyp/14.17.2/deps/zlib \
-	-I/root/.cache/node-gyp/14.17.2/deps/v8/include
+	-I/tmp/prebuildify/node/14.17.2/include/node \
+	-I/tmp/prebuildify/node/14.17.2/src \
+	-I/tmp/prebuildify/node/14.17.2/deps/openssl/config \
+	-I/tmp/prebuildify/node/14.17.2/deps/openssl/openssl/include \
+	-I/tmp/prebuildify/node/14.17.2/deps/uv/include \
+	-I/tmp/prebuildify/node/14.17.2/deps/zlib \
+	-I/tmp/prebuildify/node/14.17.2/deps/v8/include
 
 DEFS_Release := \
 	'-DNODE_GYP_MODULE_NAME=addon' \
@@ -83,13 +83,13 @@ CFLAGS_CC_Release := \
 	-std=gnu++1y
 
 INCS_Release := \
-	-I/root/.cache/node-gyp/14.17.2/include/node \
-	-I/root/.cache/node-gyp/14.17.2/src \
-	-I/root/.cache/node-gyp/14.17.2/deps/openssl/config \
-	-I/root/.cache/node-gyp/14.17.2/deps/openssl/openssl/include \
-	-I/root/.cache/node-gyp/14.17.2/deps/uv/include \
-	-I/root/.cache/node-gyp/14.17.2/deps/zlib \
-	-I/root/.cache/node-gyp/14.17.2/deps/v8/include
+	-I/tmp/prebuildify/node/14.17.2/include/node \
+	-I/tmp/prebuildify/node/14.17.2/src \
+	-I/tmp/prebuildify/node/14.17.2/deps/openssl/config \
+	-I/tmp/prebuildify/node/14.17.2/deps/openssl/openssl/include \
+	-I/tmp/prebuildify/node/14.17.2/deps/uv/include \
+	-I/tmp/prebuildify/node/14.17.2/deps/zlib \
+	-I/tmp/prebuildify/node/14.17.2/deps/v8/include
 
 OBJS := \
 	$(obj).target/$(TARGET)/src/cityhash.o
