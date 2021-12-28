@@ -1,6 +1,6 @@
 # node-cityhash
 
-> NodeJS native GO node binding providing CityHash32/64/128
+> NodeJS native GO node binding providing CityHash64/128
 
 
 ### Build Module
@@ -17,7 +17,6 @@ npm install -g node-cityhash-go
 const hash = require('node-cityhash-go');
 const str  = "hello"
 
-const hash32  = hash.cityhash32(str);
 const hash64  = hash.cityhash64(str);
 const hash128 = hash.cityhash128(str);
 ```
